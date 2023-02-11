@@ -53,7 +53,7 @@ function install_snap_packages() {
 
     for package in "${PACKAGES[@]}"
     do
-        sudo snap install -y $package
+        sudo snap install  $package
     done
 
     PACKAGES=(
@@ -62,7 +62,7 @@ function install_snap_packages() {
 
     for package in "${PACKAGES[@]}"
     do
-        sudo snap install -y $package --classic
+        sudo snap install  $package --classic
     done
 }
 
