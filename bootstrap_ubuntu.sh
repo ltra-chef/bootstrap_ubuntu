@@ -29,15 +29,11 @@ function install_apt_packages() {
         terminator
         openvpn
         vlc
-        veracrypt
         zsh
-        synaptic
-        papirus-icon-theme
         ca-certificates
     )
 
-    sudo apt install ${PACKAGES[@]}
-    sudo apt install ubuntu-restricted-extras ubuntu-restricted-addons
+    sudo apt-get install ${PACKAGES[@]}
 }
 
 function install_snap_packages() {
@@ -92,6 +88,11 @@ function update_and_upgrade()
   apt-get upgrade -y
 }
 
+function configure_ubuntu()
+{
+gsettings set org.gnome.shell favorite-apps "['firefox_firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'code_code.desktop', 'spotify_spotify.desktop', 'terminator.desktop']"
+}
+
 function  root_or_die()
 {
   if [ "$EUID" -ne 0 ]
@@ -103,3 +104,4 @@ function  root_or_die()
 root_or_die
 update_and_upgrade
 install_packages
+configure_ubuntu
