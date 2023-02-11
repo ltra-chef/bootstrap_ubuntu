@@ -36,8 +36,8 @@ function install_apt_packages() {
         ca-certificates
     )
 
-    sudo apt install -y ${PACKAGES[@]}
-    sudo apt install -y ubuntu-restricted-extras ubuntu-restricted-addons
+    sudo apt install ${PACKAGES[@]}
+    sudo apt install ubuntu-restricted-extras ubuntu-restricted-addons
 }
 
 function install_snap_packages() {
