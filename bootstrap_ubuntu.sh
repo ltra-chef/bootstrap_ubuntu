@@ -90,7 +90,10 @@ function update_and_upgrade()
 
 function configure_ubuntu()
 {
-gsettings set org.gnome.shell favorite-apps "['firefox_firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'code_code.desktop', 'spotify_spotify.desktop', 'terminator.desktop']"
+    gsettings set org.gnome.shell favorite-apps "['firefox_firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'code_code.desktop', 'spotify_spotify.desktop', 'terminator.desktop']"
+    code --install-extension eamodio.gitlens
+    
+
 }
 
 function  root_or_die()
