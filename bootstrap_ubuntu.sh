@@ -19,6 +19,7 @@ install_oh_my_zsh()
     fi
 
     sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
+    chsh -s $(which zsh)
 }
 
 
